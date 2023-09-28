@@ -1,0 +1,21 @@
+﻿@model WebApplication.Models.UserInput
+
+@using (Html.BeginForm("Index", "Timetable", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.WorkingDays)
+        @Html.TextBoxFor(model => model.WorkingDays, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.WorkingDays)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.SubjectsPerDay)
+        @Html.TextBoxFor(model => model.SubjectsPerDay, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.SubjectsPerDay)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TotalSubjects)
+        @Html.TextBoxFor(model => model.TotalSubjects, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TotalSubjects)
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Timetable</button>
+}

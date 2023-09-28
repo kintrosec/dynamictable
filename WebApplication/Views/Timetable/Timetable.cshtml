@@ -1,0 +1,23 @@
+﻿@model List<List<WebApplication.Models.Subject>>
+<h2>Generated Timetable</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            @for (var i = 1; i <= Model[0].Count; i++)
+            {
+                <th>Subject @i</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var daySubjects in Model)
+        {
+            <tr>
+                @foreach (var subject in daySubjects)
+                {
+                    <td>@subject.Name</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
